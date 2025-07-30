@@ -38,7 +38,7 @@ export default function DashboardPage() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('/pmu/api/convert-excel', {
+      const response = await fetch('/api/convert-excel', {
         method: 'POST',
         body: formData
       });
@@ -82,7 +82,7 @@ export default function DashboardPage() {
       if (filters.hippodrome) params.append('hippodrome', filters.hippodrome);
       if (filters.critere) params.append('critere', filters.critere);
       
-      const response = await fetch(`/pmu/api/chevaux?${params}`);
+      const response = await fetch(`/api/chevaux?${params}`);
       
       if (response.ok) {
         const data = await response.json();
@@ -103,7 +103,7 @@ export default function DashboardPage() {
   // Vérifier le statut de la base de données
   const checkDatabaseStatus = async () => {
     try {
-      const response = await fetch('/pmu/api/init-db');
+      const response = await fetch('/api/init-db');
       const data = await response.json();
       setIsDbInitialized(data.initialized);
     } catch (error) {
@@ -115,7 +115,7 @@ export default function DashboardPage() {
   // Initialiser la base de données
   const initializeDatabase = async () => {
     try {
-      const response = await fetch('/pmu/api/init-db?key=init-pmu-2025', {
+      const response = await fetch('/api/init-db?key=init-pmu-2025', {
         method: 'POST'
       });
       
