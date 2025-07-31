@@ -66,7 +66,7 @@ export default function UploadPage() {
         formData.append('criteriaId', selectedCriteria);
       }
 
-      const response = await fetch('/pmu/api/upload-excel', {
+      const response = await fetch('/api/upload-excel', {
         method: 'POST',
         body: formData
       });
@@ -131,7 +131,7 @@ export default function UploadPage() {
         formData.append('criteriaId', selectedCriteria);
       }
 
-      const response = await fetch('/pmu/api/upload-excel', {
+      const response = await fetch('/api/upload-excel', {
         method: 'POST',
         body: formData
       });
@@ -199,7 +199,7 @@ export default function UploadPage() {
   return (
     <div className="upload-page">
       <div className="page-header">
-        <Link href="/pmu" className="back-link">
+        <Link href="/" className="back-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="19" y1="12" x2="5" y2="12" />
             <polyline points="12 19 5 12 12 5" />
@@ -238,7 +238,7 @@ export default function UploadPage() {
                 Faire un nouvel import
               </button>
               
-              <button onClick={() => router.push('/pmu')} className="dashboard-button">
+              <button onClick={() => router.push('/')} className="dashboard-button">
                 Voir le tableau de bord
               </button>
             </div>
@@ -456,7 +456,7 @@ export default function UploadPage() {
             )}
 
             <div className="form-actions">
-              <Link href="/pmu" className="cancel-button">
+              <Link href="/" className="cancel-button">
                 Annuler
               </Link>
               <button
