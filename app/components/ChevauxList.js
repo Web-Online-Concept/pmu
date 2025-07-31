@@ -30,7 +30,7 @@ export default function ChevauxList({ chevaux, onDelete, onRefresh }) {
     setDeletingIds(prev => new Set([...prev, chevalId]));
 
     try {
-      const response = await fetch(`/pmu/api/chevaux?id=${chevalId}`, {
+      const response = await fetch(`/api/chevaux?id=${chevalId}`, {
         method: 'DELETE'
       });
 
@@ -76,7 +76,7 @@ export default function ChevauxList({ chevaux, onDelete, onRefresh }) {
     setDeletingDates(prev => new Set([...prev, date]));
 
     try {
-      const response = await fetch(`/pmu/api/chevaux/by-date?date=${date}`, {
+      const response = await fetch(`/api/chevaux/by-date?date=${date}`, {
         method: 'DELETE'
       });
 
@@ -108,7 +108,7 @@ export default function ChevauxList({ chevaux, onDelete, onRefresh }) {
     setCleaningInvalidDates(true);
 
     try {
-      const response = await fetch('/pmu/api/clean-invalid-dates', {
+      const response = await fetch('/api/clean-invalid-dates', {
         method: 'DELETE'
       });
 
